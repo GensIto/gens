@@ -9,14 +9,14 @@ export default function handler(req: NextRequest, res: NextResponse) {
     sgMail.setApiKey(process.env.SENDGRID_APIKEY);
     const msg = {
       to: req.body.email,
-      bcc: "gensito1121@gmail.com",
+      bcc: "",
       from: "gensito1121@gmail.com",
       subject: "お問合せありがとうございました。",
       text: `${req.body.name} 様\nお問合せを受け付けました。回答をお待ちください。\n\n【件名】${req.body.subject}\n${req.body.message}`,
     };
     const notification = {
       to: "gensito1121@gmail.com",
-      bcc: "gensito1121@gmail.com",
+      bcc: "",
       from: req.body.email,
       subject: "お問合せがありました",
       text: `${req.body.name} 様から\nお問合せを受け付けました。回答をお願いします。\n\n【件名】${req.body.subject}\n${req.body.message}`,
