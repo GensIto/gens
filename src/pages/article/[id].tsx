@@ -24,7 +24,12 @@ export default function ArticlePost({ article }: any) {
         ) : (
           ""
         )}
-        <p className='text-white'>{article.content}</p>
+        <div
+          className='text-white'
+          dangerouslySetInnerHTML={{
+            __html: `${article.content}`,
+          }}
+        />
       </div>
     </Layout>
   );
